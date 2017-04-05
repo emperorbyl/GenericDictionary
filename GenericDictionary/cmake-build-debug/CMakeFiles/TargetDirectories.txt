@@ -1,0 +1,4 @@
+C:/Users/benja/CLionProjects/GenericDictionary/cmake-build-debug/CMakeFiles/GenericDictionary.dir
+C:/Users/benja/CLionProjects/GenericDictionary/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/benja/CLionProjects/GenericDictionary/cmake-build-debug/CMakeFiles/Test.dir
+C:/Users/benja/CLionProjects/GenericDictionary/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/benja/CLionProjects/GenericDictionary/Container.h
+iostream
+-
+
+C:/Users/benja/CLionProjects/GenericDictionary/Dictionary.h
+string
+-
+KeyValue.h
+C:/Users/benja/CLionProjects/GenericDictionary/KeyValue.h
+Container.h
+C:/Users/benja/CLionProjects/GenericDictionary/Container.h
+iostream
+-
+
+C:/Users/benja/CLionProjects/GenericDictionary/KeyValue.h
+string
+-
+
+C:/Users/benja/CLionProjects/GenericDictionary/main.cpp
+iostream
+-
+Dictionary.h
+C:/Users/benja/CLionProjects/GenericDictionary/Dictionary.h
+
