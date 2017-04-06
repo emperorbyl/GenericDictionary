@@ -31,7 +31,16 @@ template <typename T, typename X>
 void Dictionary<T, X>::add(T key, X value)
 {
     KeyValue<T, X>* keyVal = new KeyValue<T, X>(key, value);
-    dictionary.add(keyVal);
+    bool toAdd = true;
+    for(int i = 0; i < dictionary.getCount(); i++)
+    {
+        if(key == dictionary[i]->getKey()) {
+            toAdd = false;
+            throw "Key already exists!";
+        }
+    }
+    if(toAdd)
+        dictionary.add(keyVal);
 }
 
 template <typename T, typename X>
@@ -61,11 +70,16 @@ template <typename T, typename X>
 KeyValue<T, X>* Dictionary<T, X>::getByKey(T key)
 {
     std::string lookValue = "";
+    bool exits = false;
     for(int i = 0; i < dictionary.getCount(); i++)
     {
-        if(key == dictionary[i]->getKey())
+        if(key == dictionary[i]->getKey()) {
             lookValue = dictionary[i]->getValue();
+            exits = true;
+        }
     }
+    if(!exits)
+        throw "This key isn't valid.";
     KeyValue<T, X>* keyValue = new KeyValue<T, X>(key, lookValue);
     return keyValue;
 }
@@ -73,22 +87,31 @@ KeyValue<T, X>* Dictionary<T, X>::getByKey(T key)
 template <typename T, typename X>
 KeyValue<T, X>* Dictionary<T, X>::getByIndex(int index)
 {
+    if(index > dictionary.getCount() - 1)
+        throw "The index is outside of the dictionary.";
     return dictionary.get(index);
 }
 
 template <typename T, typename X>
 void Dictionary<T, X>::removeByKey(T key)
 {
+    bool exits = false;
     for(int i = 0; i < dictionary.getCount(); i++)
     {
-        if(key == dictionary[i]->getKey())
+        if(key == dictionary[i]->getKey()) {
             dictionary.remove(i);
+            exits = true;
+        }
     }
+    if(!exits)
+        throw "This key isn't valid.";
 }
 
 template <typename T, typename X>
 void Dictionary<T, X>::removeByIndex(int index)
 {
+    if(index > dictionary.getCount() - 1)
+        throw "The index is outside of the dictionary.";
     dictionary.remove(index);
 }
 
